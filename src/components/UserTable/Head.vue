@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { useUsersStore } from '@/store/users';
-import { SortType } from '@/types/sort_types';
+import { SortType } from '@/types/SortTypes';
 
 const usersStore = useUsersStore();
 

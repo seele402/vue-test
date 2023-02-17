@@ -10,7 +10,9 @@
 
 <script setup lang='ts'>
 import ModalForm from './Form.vue';
-const emit = defineEmits(['modal-close-pressed'])
+const emit = defineEmits<{
+  (e: 'modal-close-pressed'): void 
+}>()
 </script>
 
 <style scoped lang="scss">

@@ -25,7 +25,9 @@ import { useUsersStore } from '@/store/users';
 import TableBody from './Body.vue';
 import TableHead from './Head.vue';
 
-const emit = defineEmits(['add-user-button-pressed'])
+const emit = defineEmits<{
+  (e: 'add-user-button-pressed'): void 
+}>()
 
 const usersStore = useUsersStore();
 </script>

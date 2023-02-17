@@ -72,9 +72,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useUsersStore } from '@/store/users';
-import { User } from '@/types/user';
+import { User } from '@/types/User';
 
-const emit = defineEmits(['modal-close-button-pressed'])
+const emit = defineEmits<{
+  (e: 'modal-close-button-pressed'): void 
+}>()
 
 const usersStore = useUsersStore();
 const newName = ref<string>('');

@@ -28,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import { User } from '@/types/user';
+import { User } from '@/types/User';
 import { defineProps, computed, ref } from 'vue';
 
 const isExpanded = ref(false);
-const randomGreen = `#${((Math.random() * 0xffffff) << 0).toString(16)}`;
+const RANDOM_COLOR = `#${((Math.random() * 0xffffff) << 0).toString(16)}`;
 
 const props = defineProps<{
   user: User;
@@ -86,6 +86,6 @@ const userPhone = computed(
 }
 .subbody {
   align-self: flex-end;
-  box-shadow: inset 8px 0px 0px 0px v-bind(randomGreen);
+  box-shadow: inset 8px 0px 0px 0px v-bind(RANDOM_COLOR);
 }
 </style>

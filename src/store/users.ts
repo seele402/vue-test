@@ -1,7 +1,7 @@
 import { ref, watch, computed, Ref } from "vue";
 import { defineStore } from "pinia";
-import type { User } from "@/types/user";
-import { SortType } from "@/types/sort_types";
+import type { User } from "@/types/User";
+import { SortType } from "@/types/SortTypes";
 
 export const useUsersStore = defineStore("users", () => {
   const users = ref<User[]>([]);
