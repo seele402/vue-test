@@ -47,13 +47,14 @@
           v-model="userParent"
           class="parent-input"
         >
-          <option />
-          <option
-            v-for="user in flattenedUsers"
-            :key="user.id"
-            :value="user"
-          >
-            {{ user.name }}
+          <option>
+            <option
+              v-for="user in flattenedUsers"
+              :key="user.id"
+              :value="user"
+            >
+              {{ user.name }}
+            </option>
           </option>
         </select>
       </div>
@@ -94,6 +95,7 @@ const flattenUsers = (users: User[]) => {
     return prev;
   }, [] as User[]);
 };
+
 const onSumbit = () => {
   if (
     usersStore.users.some(
@@ -104,6 +106,8 @@ const onSumbit = () => {
     return null;
   }
   usersStore.addNewUser(newName.value, newPhone.value, userParent.value);
+  newName.value = '';
+  newPhone.value = '';
 };
 </script>
 
